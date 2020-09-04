@@ -1,0 +1,77 @@
+<html>
+  <head><h2>Question 1 and 2 Validating Web Form</h2></head>
+    <title>Form</title>
+    <body>
+        <script type="text/javascript">
+        function validate_form ( )
+        {
+	        valid = true;
+            if ( ( document.contact_form.gender[0].checked == false ) && ( document.contact_form.gender[1].checked == false ) )
+            {
+                alert ( "Please choose your Gender" );
+                valid = false;
+            }
+            if ( document.contact_form.check.checked == false )
+            {
+                alert ( "Please check the I Agree box." );
+                valid = false;
+            }
+            if ( document.contact_form.cit.selectedIndex == 0 )
+            {
+                alert ( "Please select your Current City" );
+                valid = false;
+            }
+
+        return valid;
+        }
+        </script>
+    <div class="form-align">
+    <form name="contact_form" onSubmit="return validate_form ( );">
+        <p>
+    <label for="fname">First Name:</label> 
+    <input type="text" id="fname" >
+    
+    <br>
+    <br>
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" >
+    
+    <br>
+    <br>
+    <label for="pwd">Password: </label>
+    <input type="password" id="pwd" >
+    
+    <br>
+    <br>
+            
+    <label for="gen">Gender: </label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br>.
+          <br>
+            <label for="cucit">Current Address: </label>
+    <textarea></textarea>
+    
+    <br>
+    <br>
+        <label for="cit">Current City:</label>
+        <select name="cit" id="cit">
+            <option value="">Select City:</option>
+            <option value="del">Delhi</option>
+            <option value="mum">Mumbai</option>
+            <option value="bho">Bhopal </option>
+            <option value="kan">Kanpur</option>
+            <option value="kol">Kolkata</option>
+            <option value="vara">Varanasi</option>
+          </select><br>
+            <br>
+            <br>
+
+        <input type="checkbox" name="check" value="Yes"> I Agree
+            <br><br>
+        <input type="reset"><br><br>
+            <input type="submit" value="Submit">
+        
+    </form>
+</div>
+</body>
+</html>
